@@ -31,4 +31,21 @@ class Produto{
     public static function listar(){
         return $_SESSION['Produto'] ?? [];
     }
+
+    public function atualizar($id){
+        if(isset($_SESSION['Produto'][$id])){
+            $_SESSION['Produto'][$id] = [
+                'nome' => $this->nome,
+                'email' => $this->email,
+                'Quantidade' => $this->Quantidade,
+                'Validade' => $this->Validade
+            ];
+        }
+    }
+
+    public static function excluir ($id){
+        if(isset($_SESSION['Produto'][$id])){
+            unset($_SESSION['Produto'][$id]);
+        }
+    }
 }

@@ -29,4 +29,21 @@ class ProdutoController{
         echo "</pre>";
         require 'View/ProdutoListar.php';
     }
+    public function telaEditar(){
+        $Produto = Produto::buscar($_GET['id']);
+        require 'View/ProdutoEditar.php';
+    }
+
+    public function atuaizado(){
+        $Produto = new Produto($_POST['nome'], $_POST['email']);
+        $Produto->atuaizadar($_GET['id']);
+        header('Location: /PB_PHP/mvc.exemplo/Produto/listartelaCadastro?id='.($_GET['id']));
+        exit;
+    }
+
+    public function excluir(){
+        Produto::excluir($_GET['id']);
+        header('Location/PB_PHP/mvc.exemplo/Produto/listar');
+        exit;
+    }
 }

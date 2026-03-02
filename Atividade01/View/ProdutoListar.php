@@ -20,7 +20,14 @@
                 <td><?= $u['Preço']?></td>
                 <td><?= $u['Quantidade']?></td>
                 <td><?= $u['Validade']?></td>
-                <td>Compra Feita</td>
+                <td>Compra Feita
+                    <a href="/PB_PHP/Atividade01/Produto/listar/telaCadastro?id=<?= $id ?>">
+                    Editar
+                    </a>
+                    <a href="/PB_PHP/Atividade01/Produto/listarexcluir?id=<?= $id ?>">
+                    excluir
+                    </a>
+                </td>
             </tr>
         <?php endforeach ?>
     </table>
