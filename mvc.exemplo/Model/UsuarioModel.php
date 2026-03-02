@@ -11,17 +11,31 @@ class Usuario{
     }
 
     public function salvar(){
-        if(!isset($_SESSION['usuario'])){
-            $_SESSION['usuario'] = [];
+        if(!isset($_SESSION['usuarios'])){
+            $_SESSION['usuarios'] = [];
         }
 
-        $_SESSION['usuario'][] = [
+        $_SESSION['usuarios'][] = [
             'nome' => $this->nome,
             'email' => $this->email
         ];
     }
 
     public static function listar(){
-        return $_SESSION['usuario'] ?? [];
+        return $_SESSION['usuarios'] ?? [];
+    }
+
+    public static function buscar($sid){
+        return $_SESSION ['usarios'][$id] ?? null;
+
+    }
+
+    public function atualizar($id){
+        if(isset($_SESSION['usuarios'][$id])){
+            $_SESSION['usuarios'][$id] = [
+                'nome' => $this->nome,
+                'email' => $this->email,
+            ];
+        }
     }
 }

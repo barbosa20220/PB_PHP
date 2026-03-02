@@ -18,7 +18,17 @@ switch ($route){
         $usuarioControler->listarUsuario();
         break;
 
+    case "usuario/telaEditar":
+        $usuarioControler->telaEditar();
+        break;
+
+    case "usuario/utualizado":
+        $usuarioControler->atualizar();
+        break;
+
     default:
         echo "Pagina não encontrada";
         break;
+
+
 }

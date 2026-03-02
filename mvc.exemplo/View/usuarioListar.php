@@ -13,13 +13,17 @@
             <th>email</th>
             <th>ações</th>
         </tr>
-        <?php foreach($usuario as $u): ?>
+        <?php foreach($usuario as $id => $u): ?>
             <tr>
                 <td><?= $u['nome']?></td>
                 <td><?= $u['email']?></td>
-                <td>proxima aula</td>
+                <td>
+                    <a href="/PB_PHP/mvc.exemplo/usuario/telaCadastro?id=<?= $id ?>">
+                    Editar
+                    </a>
+                </td>
             </tr>
-        <?php endforeach ?>
+        <?php endforeach; ?>
     </table>
 </body>
 </html>
