@@ -39,4 +39,10 @@ class UsuarioController{
         header('Location: /PB_PHP/mvc.exemplo/usuario/telaCadastro?id='.($_GET['id']));
         exit;
     }
+
+    public function excluir(){
+        Usuario::excluir($_GET['id']);
+        header('Location:/PB_PHP/mvc.exemplo/usuario/listar');
+        exit;
+    }
 }
